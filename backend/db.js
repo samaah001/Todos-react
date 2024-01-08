@@ -1,5 +1,8 @@
 const mongoose = require("mongoose");
-mongoose.connect("mongodb://localhost:27017/todos");
+require('dotenv').config();
+const url = process.env.Mongo_URL;
+// mongoose.connect("mongodb://localhost:27017/todos");
+mongoose.connect(url);
 const todoSchema = mongoose.Schema({
     title:String,
     description:String,

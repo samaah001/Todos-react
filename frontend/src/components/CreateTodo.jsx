@@ -1,4 +1,5 @@
-export function CreateTodo(){
+
+export function CreateTodo({onChange}){
     return <div>
         <input type="text" name="" id="title" placeholder="Title" />
         <br /><br />
@@ -15,6 +16,8 @@ export function CreateTodo(){
                 headers:{
                     "Content-type":"application/json"
                 }
+            }).then(res=>{
+                onChange();
             })
         }}>Add a todo</button>
     </div>
